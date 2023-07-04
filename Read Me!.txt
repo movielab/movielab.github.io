@@ -1,0 +1,85 @@
+======================================
+
+
+Welcome to short installation
+
+1. Upload and Extraxt file on hosting
+
+2. Open Settings : /dq-admin/settings.php change with yours
+    "url"                   => 'http://domain.com', 
+	"weblogo"               => 'TVMovie',
+	"webname"               => 'TVMovie',
+	"webdescription"        => 'Watch movies full HD online free. Watch latests episode series online. Over 9000 free streaming movies, documentaries &amp; TV shows',
+	"webkeywords"           => 'watch movies free online, watch series online, watch movies free, movies online free, watch free movies online, free movies online, watch movies online free, free movie streaming, movie,tv,full,online, stream,hd',
+	"email"                 => 'admin@movstream.online',
+	"HistatsID"             => '',
+	"google_code"           => '',
+	"yandex_code"           => '',
+	"bing_code"             => '',
+    
+	"Tmdb_api"              => ''
+	
+	"bahasa"                => 'en', default
+	"auto_language"         => 'false', // empty or true
+    
+    choose player / pilih jenis player
+    "choose_player"         => 'default_player',     
+    default_player    = POP UP Register show up after click play button/POP UP Register keluar setelah klik tombol play
+    video_player      = Opening with video player first before POP UP Register show up / pembukaan dengan video player sebelum POP UP Register keluar
+    intro_player      = Opening with intro video from youtube first before POP UP Register show up / pembukaan dengan video player sebelum POP UP Register keluar
+                                                     
+    Input your Sub ID if you use Sub ID in your affiliate network
+    "sub_id"                => '',          
+    
+    Enable (true) or Disable (false) Ads.. 
+    "160x300"               => "true", // true/false if true then ads will be show
+    "160x600"               => "true", // true/false if true then ads will be show
+    "320x50"                => "true", // true/false if true then ads will be show
+    "300x250"               => "true", // true/false if true then ads will be show
+    "300x250_invideo"       => "true", // true/false if true then ads will be show
+    "468x60"                => "true", // true/false if true then ads will be show
+    "728x90"                => "true", // true/false if true then ads will be show
+    "nativeads"             => "true", // true/false if true then ads will be show
+    "scriptheaderads"       => "true", // true/false if true then ads will be show, this for ads script to put on header
+    "scriptfooterads"       => "true", // true/false if true then ads will be show, this for ads script to put on footer or before </body>
+    
+    keep in mind that some ad providers have been considered as malware by some hostings, 
+    if this happens your ad code will suddenly disappear, 
+    to fix this open the hosting dashboard and look for -> security -> immunify360 
+    click on ignore list and put your domain link here
+    for example i put my script on public_html
+    /home/..../public_html/domain.com
+    
+3. Input offer Link : 
+   Open or Edit redirect.php at /dq-content/themes/movie/do/redirect.php
+   find $uri_affilate = 'https://deqila.id/';
+   change https://deqila.id/ with your link affiliate
+
+4. Open robots.txt Change Url domain :
+   - Sitemap: http://domain.com/sitemap.xml
+
+5. Insert keywords : /dq-content/keywords
+   - make new file with format 
+   sitemap-1.txt or sitemap-2.txt or sitemap-3.txt etc...
+   keyword format put line by line:
+   kw1
+   kw2
+   kw3
+   etc
+
+6. Sitemap url is https://domain.com/sitemap.xml
+
+7. Input your ads code to : /dq-content/themes/movie/ads
+
+8. Short description
+   Movie 
+   https://domain.com/moviedesc/580489      580489      = TMDB ID Movie
+   TV Series
+   https://domain.com/tvdesc/58841          58841       = TMDB ID TV
+   https://domain.com/tvdesc/58841-1        58841-1     = TMDB ID TV - TMDB ID TV Sesons
+   https://domain.com/tvdesc/58841-1-2      58841-1-2   = TMDB ID TV - TMDB ID TV Sesons - TMDB ID TV Episodes
+   
+9. Done.
+
+
+========================================================

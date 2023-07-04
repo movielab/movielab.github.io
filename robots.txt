@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /cache/
+Disallow: /dq-admin/
+Disallow: /dq-includes/
+
+Sitemap: https://domain.com/sitemap.xml
