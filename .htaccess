@@ -1,0 +1,90 @@
+RewriteOptions inherit
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+ErrorDocument 404 /404.php
+RewriteCond ^movie/(.*)/(.*) !(\.html)$
+RewriteCond ^tv/(.*)/(.*) !(\.html)$
+RewriteRule ^p/(.*)/(.*)$ ?do=$1&id=$2 [QSA]
+RewriteRule ^p/(.*)$ ?do=$1 [QSA]
+
+RewriteRule ^rss.xml /dq-content/sitemap/rss.php [L]
+RewriteRule ^rss-movie.xml /dq-content/sitemap/rss-movie.php [L]
+RewriteRule ^rss-tv.xml /dq-content/sitemap/rss-tv.php [L]
+RewriteRule ^rss-person.xml /dq-content/sitemap/rss-person.php [L]
+RewriteRule ^sitemap.xml /dq-content/sitemap/sitemap.php [L]
+RewriteRule ^sitemap-post.xml /dq-content/sitemap/sitemap-post.php [L]
+RewriteRule ^sitemap-movie.xml /dq-content/sitemap/sitemap-movie.php [L]
+RewriteRule ^sitemap-tv.xml /dq-content/sitemap/sitemap-tv.php [L]
+RewriteRule ^sitemap-genres.xml /dq-content/sitemap/sitemap-genres.php [L]
+RewriteRule ^sitemap-person.xml /dq-content/sitemap/sitemap-person.php [L]
+RewriteRule ^sitemap-misc.xml /dq-content/sitemap/sitemap-misc.php [L]
+RewriteRule ^sitemap-(.*).xml /dq-content/sitemap/sitemap-other.php?type=$1 [L]
+
+RewriteRule ^rc ?do=redirect [QSA]
+RewriteRule ^movie-now-playing ?get=movie-now-playing [QSA]
+RewriteRule ^movie-popular ?get=movie-popular [QSA]
+RewriteRule ^movie-upcoming ?get=movie-upcoming [QSA]
+RewriteRule ^movie-top ?get=movie-top [QSA]
+RewriteRule ^tv-popular ?get=tv-popular [QSA]
+RewriteRule ^tv-on-the-air ?get=tv-on-the-air [QSA]
+RewriteRule ^tv-airing-to-day ?get=tv-airing-to-day [QSA]
+RewriteRule ^tv-top ?get=tv-top [QSA]
+RewriteRule ^keyword/(.*)/([0-9]+)?$ ?get=keyword&term=$1&o=$2 [QSA]
+RewriteRule ^genres/(.*)/([0-9]+)?$ ?do=category&term=$1&o=$2 [QSA]
+RewriteRule ^movie/(.*)/(.*)$ ?do=movie&id=$1&t=$2 [L]
+RewriteRule ^movie/(.*)(\/|)$ ?do=movie&id=$1 [L]
+RewriteRule ^moviedesc/(.*)(\/|)$ ?get=moviedesc&id=$1 [L]
+RewriteRule ^tv/(.*)/(.*)$ ?do=tv&id=$1&t=$2 [L]
+RewriteRule ^tv/(.*)(\/|)$ ?do=tv&id=$1 [L]
+RewriteRule ^tvdesc/(.*)(\/|)$ ?get=tvdesc&id=$1 [L]
+RewriteRule ^person/(.*)/(.*)$ ?get=person&pr=$1&term=$2 [L]
+RewriteRule ^person/(.*)(\/|)$ ?get=person&pr=$1 [L]
+RewriteRule ^company/(.*)/(.*)$ ?get=company&id=$1&term=$2 [L]
+RewriteRule ^company/(.*)(\/|)$ ?get=company&id=$1 [L]
+RewriteRule ^network/(.*)/(.*)$ ?get=network&id=$1&term=$2 [L]
+RewriteRule ^network/(.*)(\/|)$ ?get=network&id=$1 [L]
+RewriteRule ^movies ?get=movies [QSA]
+RewriteRule ^series ?get=series [QSA]
+RewriteRule ^search/(.*)$ ?do=search&s=$1 [QSA]
+
+RewriteRule ^([a-zI]+)/movie-now-playing ?get=movie-now-playing&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/movie-popular ?get=movie-popular&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/movie-upcoming ?get=movie-upcoming&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/movie-top ?get=movie-top&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/tv-popular ?get=tv-popular&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/tv-on-the-air ?get=tv-on-the-air&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/tv-airing-to-day ?get=tv-airing-to-day&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/tv-top ?get=tv-top&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/keyword/(.*)/([0-9]+)?$ ?get=keyword&language=$1&term=$2&o=$3 [QSA]
+RewriteRule ^([a-zI]+)/genres/(.*)/([0-9]+)?$ ?do=category&language=$1&term=$2&o=$3 [QSA]
+RewriteRule ^([a-zI]+)/movie/(.*)/(.*)$ ?do=movie&language=$1&id=$2&t=$3 [L]
+RewriteRule ^([a-zI]+)/movie/(.*)(\/|)$ ?do=movie&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/moviedesc/(.*)/(.*)$ ?get=moviedesc&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/tv/(.*)/(.*)$ ?do=tv&language=$1&id=$2&t=$3 [L]
+RewriteRule ^([a-zI]+)/tv/(.*)(\/|)$ ?do=tv&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/tvdesc/(.*)/(.*)$ ?get=tvdesc&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/person/(.*)/(.*)$ ?get=person&language=$1&pr=$2&term=$3 [L]
+RewriteRule ^([a-zI]+)/person/(.*)(\/|)$ ?get=person&language=$1&pr=$2 [L]
+RewriteRule ^([a-zI]+)/company/(.*)/(.*)$ ?get=company&language=$1&id=$2&term=$3 [L]
+RewriteRule ^([a-zI]+)/company/(.*)(\/|)$ ?get=company&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/network/(.*)/(.*)$ ?get=network&language=$1&id=$2&term=$3 [L]
+RewriteRule ^([a-zI]+)/network/(.*)(\/|)$ ?get=network&language=$1&id=$2 [L]
+RewriteRule ^([a-zI]+)/movies ?get=movies&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/series ?get=series&language=$1 [QSA]
+RewriteRule ^([a-zI]+)/search/(.*)$ ?do=search&language=$1&s=$2 [QSA]
+RewriteRule ^([a-zI]+)(\/|)$ ?do=index&language=$1 [QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(\/|)$ ?do=index [QSA]
+
+</IfModule>
+
+## STOP REFERRER SPAM
+RewriteCond %{HTTP_REFERER} success\-seo\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} best\-seo\-solution\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} best\-seo\-offer\.com [NC]
+RewriteRule .* - [F]
